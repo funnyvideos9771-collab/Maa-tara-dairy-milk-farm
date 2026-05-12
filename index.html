@@ -7,10 +7,6 @@
 
 <title>MAA TARA DAIRY MILK FARM</title>
 
-<!-- PWA MANIFEST ADD -->
-<link rel="manifest" href="./manifest.json">
-<meta name="theme-color" content="#bf953f">
-
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700;900&family=Montserrat:wght@500;700;900&display=swap" rel="stylesheet">
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
@@ -18,13 +14,17 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 
 <style>
-/* 🔴 YOUR FULL CSS SAME AS IT IS */
+
 :root{
 --gold:linear-gradient(90deg,#bf953f,#fcf6ba,#b38728,#fcf6ba,#aa771c);
 --glow:0 0 25px rgba(191,149,63,.7);
 }
 
-*{margin:0;padding:0;box-sizing:border-box;}
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
 
 body{
 background:#000;
@@ -33,15 +33,332 @@ font-family:Montserrat,sans-serif;
 padding-bottom:140px;
 }
 
-/* ALL YOUR CSS REMAINS EXACT SAME */
-/* (NO CHANGE DONE) */
-</style>
+/* HEADER */
 
+.header{
+text-align:center;
+padding:55px 15px;
+background:
+linear-gradient(#000a,#000),
+url('https://images.unsplash.com/photo-1550583724-b2692b85b150');
+background-size:cover;
+background-position:center;
+}
+
+.logo-wrap{
+display:flex;
+justify-content:center;
+margin-bottom:15px;
+}
+
+.logo{
+width:130px;
+height:130px;
+border-radius:50%;
+background:
+radial-gradient(circle,#fff8dc,#d4af37,#8b0000);
+
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+
+border:4px solid #ffd700;
+
+box-shadow:
+0 0 30px rgba(255,215,0,.5),
+inset 0 0 15px rgba(255,255,255,.4);
+}
+
+.logo .m{
+font-size:60px;
+font-family:Cinzel;
+font-weight:900;
+color:#7a0000;
+line-height:1;
+}
+
+.logo .since{
+font-size:12px;
+font-weight:700;
+letter-spacing:2px;
+color:#fff;
+margin-top:5px;
+}
+
+.title{
+font-family:Cinzel;
+font-size:28px;
+font-weight:900;
+background:var(--gold);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+}
+
+.slogan{
+margin-top:10px;
+font-size:13px;
+color:#fff3b0;
+}
+
+/* ITEMS */
+
+.item{
+margin:12px 15px;
+padding:14px;
+border-radius:18px;
+display:flex;
+align-items:center;
+gap:12px;
+background:#0a0a0a;
+border:1px solid rgba(191,149,63,.4);
+box-shadow:var(--glow);
+}
+
+.item img{
+width:75px;
+height:75px;
+border-radius:14px;
+object-fit:cover;
+}
+
+.info{
+flex:1;
+font-size:15px;
+font-weight:700;
+}
+
+.info small{
+display:block;
+margin-top:5px;
+color:#fcf6ba;
+font-size:13px;
+}
+
+.add-btn{
+background:var(--gold);
+padding:8px 18px;
+border-radius:20px;
+color:#000;
+font-weight:900;
+cursor:pointer;
+}
+
+.out-btn{
+background:#b30000;
+padding:8px 16px;
+border-radius:20px;
+color:#fff;
+font-size:12px;
+font-weight:900;
+box-shadow:0 0 15px rgba(255,0,0,.5);
+}
+
+.qty{
+display:flex;
+gap:10px;
+background:#111;
+padding:6px 12px;
+border-radius:25px;
+}
+
+.qty span{
+width:26px;
+height:26px;
+border-radius:50%;
+background:var(--gold);
+display:flex;
+align-items:center;
+justify-content:center;
+color:#000;
+font-weight:900;
+cursor:pointer;
+}
+
+/* CART */
+
+.cart{
+position:fixed;
+bottom:80px;
+left:15px;
+right:15px;
+display:none;
+align-items:center;
+justify-content:space-between;
+padding:14px;
+border-radius:18px;
+background:#111;
+border:1px solid #bf953f;
+box-shadow:var(--glow);
+z-index:999;
+}
+
+.cart-mid{
+font-weight:900;
+background:var(--gold);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+}
+
+/* WHATSAPP */
+
+.connect{
+position:fixed;
+bottom:10px;
+left:15px;
+right:15px;
+padding:15px;
+border-radius:22px;
+text-align:center;
+background:var(--gold);
+color:#000;
+font-weight:900;
+box-shadow:var(--glow);
+text-decoration:none;
+z-index:999;
+}
+
+.connect small{
+display:block;
+font-size:11px;
+margin-top:3px;
+}
+
+/* MODAL */
+
+.modal{
+display:none;
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:#000c;
+z-index:9999;
+}
+
+.box{
+background:#0a0a0a;
+margin:20% auto;
+padding:20px;
+width:90%;
+border-radius:20px;
+border:2px solid #bf953f;
+}
+
+input,select{
+width:100%;
+padding:12px;
+margin:8px 0;
+border-radius:10px;
+border:1px solid #333;
+background:#000;
+color:#fff;
+}
+
+.pay{
+display:flex;
+gap:10px;
+}
+
+.pay div{
+flex:1;
+padding:14px;
+border:1px solid #bf953f;
+border-radius:10px;
+text-align:center;
+cursor:pointer;
+}
+
+.active{
+background:var(--gold);
+color:#000;
+}
+
+button{
+width:100%;
+padding:15px;
+margin-top:10px;
+border:none;
+border-radius:15px;
+background:var(--gold);
+color:#000;
+font-weight:900;
+}
+
+/* BILL */
+
+#billPreview{
+display:none;
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:#000;
+overflow:auto;
+z-index:99999;
+padding:20px;
+}
+
+.bill{
+max-width:520px;
+margin:auto;
+padding:25px;
+background:
+linear-gradient(180deg,#111,#1b1b1b);
+border:2px solid #bf953f;
+border-radius:25px;
+box-shadow:
+0 0 35px rgba(191,149,63,.7);
+}
+
+.bill-actions{
+max-width:520px;
+margin:15px auto;
+display:flex;
+gap:12px;
+}
+
+.premium-btn{
+flex:1;
+padding:16px;
+border:none;
+border-radius:18px;
+font-size:16px;
+font-weight:900;
+cursor:pointer;
+background:var(--gold);
+color:#000;
+}
+
+.back-btn{
+background:#8b0000;
+color:#fff;
+}
+
+.div{
+border-top:1px dashed #bf953f;
+margin:18px 0;
+}
+
+.total{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:14px 18px;
+border-radius:16px;
+background:var(--gold);
+color:#000;
+font-size:22px;
+font-weight:900;
+}
+
+</style>
 </head>
 
 <body>
 
-<!-- 🔴 YOUR FULL HTML CONTENT EXACT SAME -->
 <div class="header">
 
 <div class="logo-wrap">
@@ -82,58 +399,553 @@ MAA TARA DAIRY MILK FARM
 
 MESSAGE ON WHATSAPP
 
-<small>Pure • Fresh • Trusted</small>
+<small>
+Pure • Fresh • Trusted
+</small>
 
 </a>
 
-<!-- YOUR MODAL + BILL + EVERYTHING SAME -->
-
 <div class="modal" id="modal">
+
 <div class="box">
+
 <input id="name" placeholder="Customer Name">
 
 <select id="type" onchange="toggleAddr()">
+
 <option>Store Pickup</option>
+
 <option>Home Delivery</option>
+
 </select>
 
-<input id="addr" placeholder="Enter Address" style="display:none">
+<input id="addr"
+placeholder="Enter Address"
+style="display:none">
 
 <div class="pay">
-<div onclick="setPay('Card')" id="card">💳 Card</div>
-<div onclick="setPay('Cash')" id="cash" class="active">💵 Cash</div>
+
+<div onclick="setPay('Card')" id="card">
+💳 Card
 </div>
 
-<button onclick="placeOrder()">Place Order</button>
-<button onclick="closeForm()">⬅ Back</button>
+<div onclick="setPay('Cash')" id="cash" class="active">
+💵 Cash
+</div>
 
 </div>
+
+<button onclick="placeOrder()">
+Place Order
+</button>
+
+<button onclick="closeForm()">
+⬅ Back
+</button>
+
+</div>
+
 </div>
 
 <div id="billPreview">
+
 <div class="bill" id="billCard"></div>
 
 <div class="bill-actions">
-<button class="premium-btn" onclick="downloadPDF()">📥 Download PDF</button>
-<button class="premium-btn back-btn" onclick="closeBill()">⬅ Back</button>
-</div>
+
+<button class="premium-btn"
+onclick="downloadPDF()">
+
+📥 Download PDF
+
+</button>
+
+<button class="premium-btn back-btn"
+onclick="closeBill()">
+
+⬅ Back
+
+</button>
+
 </div>
 
-<!-- 🔴 ONLY PWA SERVICE WORKER ADD -->
+</div>
+
 <script>
-if ('serviceWorker' in navigator) {
-  window.addEventListener('load', () => {
-    navigator.serviceWorker.register('./sw.js')
-      .then(reg => console.log("SW Registered"))
-      .catch(err => console.log("SW Failed", err));
-  });
+
+let cartData={}
+let priceMap={}
+let total=0
+let pay="Cash"
+
+/* GOOGLE SHEET */
+
+fetch("https://docs.google.com/spreadsheets/d/1OxpiMXKY91fVpoSJbDZxmJCu9EeTe72z8AXaLkqF9hE/gviz/tq?tqx=out:json")
+
+.then(r=>r.text())
+
+.then(t=>{
+
+let j=JSON.parse(t.substr(47).slice(0,-2))
+
+j.table.rows.forEach(r=>{
+
+let n=r.c[0]?.v || ""
+let p=r.c[1]?.v || 0
+let img=r.c[2]?.v || "https://via.placeholder.com/70"
+
+let status=(r.c[3]?.v || "yes")
+.toString()
+.toLowerCase()
+
+if(status=="yes"){
+
+menu.innerHTML+=`
+
+<div class="item">
+
+<img src="${img}">
+
+<div class="info">
+
+${n}
+
+<small>₹${p}</small>
+
+</div>
+
+<div id="${n}">
+
+<div class="add-btn"
+onclick="add('${n}',${p})">
+
+ADD
+
+</div>
+
+</div>
+
+</div>
+
+`
+
+}else{
+
+menu.innerHTML+=`
+
+<div class="item">
+
+<img src="${img}">
+
+<div class="info">
+
+${n}
+
+<small>₹${p}</small>
+
+</div>
+
+<div class="out-btn">
+
+OUT OF STOCK
+
+</div>
+
+</div>
+
+`
+
 }
-</script>
 
-<!-- 🔴 YOUR ORIGINAL JS REMAINS SAME -->
-<script>
-/* ALL YOUR EXISTING JAVASCRIPT EXACT SAME */
-/* NO CHANGE DONE */
+})
+
+})
+
+function add(n,p){
+
+cartData[n]=1
+priceMap[n]=p
+
+render(n)
+update()
+
+}
+
+function render(n){
+
+document.getElementById(n).innerHTML=
+
+`<div class="qty">
+
+<span onclick="dec('${n}')">-</span>
+
+${cartData[n]}
+
+<span onclick="inc('${n}')">+</span>
+
+</div>`
+
+}
+
+function inc(n){
+
+cartData[n]++
+render(n)
+update()
+
+}
+
+function dec(n){
+
+cartData[n]--
+
+if(cartData[n]<=0){
+
+delete cartData[n]
+
+document.getElementById(n).innerHTML=
+
+`<div class="add-btn"
+onclick="add('${n}',${priceMap[n]})">
+
+ADD
+
+</div>`
+
+}else{
+
+render(n)
+
+}
+
+update()
+
+}
+
+function update(){
+
+let qty=0
+total=0
+
+for(let i in cartData){
+
+qty+=cartData[i]
+total+=cartData[i]*priceMap[i]
+
+}
+
+cart.style.display=qty?"flex":"none"
+
+cqty.innerText=qty+" items"
+
+ctotal.innerText="₹"+total
+
+}
+
+function openForm(){
+
+modal.style.display="block"
+
+}
+
+function closeForm(){
+
+modal.style.display="none"
+
+}
+
+function setPay(p){
+
+pay=p
+
+card.classList.remove("active")
+cash.classList.remove("active")
+
+if(p=="Card"){
+
+card.classList.add("active")
+
+}else{
+
+cash.classList.add("active")
+
+}
+
+}
+
+function toggleAddr(){
+
+addr.style.display=
+(type.value=="Home Delivery")
+?"block":"none"
+
+}
+
+function placeOrder(){
+
+if(Object.keys(cartData).length===0){
+
+alert("Please add item")
+return
+
+}
+
+let name=document.getElementById("name").value || "Customer"
+
+let address=
+(type.value=="Home Delivery")
+?document.getElementById("addr").value
+:"Store Pickup"
+
+let orderId="MT-"+Date.now()
+
+let now=new Date()
+
+let date=now.toLocaleDateString('en-GB')
+
+let time=now.toLocaleTimeString([],{
+hour:'2-digit',
+minute:'2-digit'
+})
+
+let msg=`🥛✨ *नया डेयरी ऑर्डर प्राप्त हुआ* ✨🥛
+
+━━━━━━━━━━━━━━━━━━━━━━
+
+🏪 *MAA TARA DAIRY MILK FARM*
+🐄 Fresh • Pure • Healthy
+
+🧾 *ऑर्डर आईडी:* #${orderId}
+
+📅 *दिनांक:* ${date} | ⏰ ${time}
+
+👤 *ग्राहक:* ${name}
+
+🛒 *ऑर्डर प्रकार:* ${type.value}
+
+📍 *पता:* ${address}
+
+━━━━━━━━━━━━━━━━━━━━━━
+
+📋 *ऑर्डर विवरण*
+
+`
+
+let html=""
+
+for(let i in cartData){
+
+msg+=`🥛 ${i} × ${cartData[i]} ━━━━━ ₹${cartData[i]*priceMap[i]}
+
+`
+
+html+=`
+
+<div style="
+display:flex;
+justify-content:space-between;
+padding:12px 0;
+border-bottom:1px dashed rgba(255,255,255,.15);
+font-size:16px;
+">
+
+<div>🥛 ${i} × ${cartData[i]}</div>
+
+<div style="color:#ffd700;font-weight:700;">
+₹${cartData[i]*priceMap[i]}
+</div>
+
+</div>
+
+`
+
+}
+
+msg+=`
+
+━━━━━━━━━━━━━━━━━━━━━━
+
+💰 *कुल राशि:* ₹${total}
+
+💳 *पेमेंट मोड:* ${pay=="Cash"
+?"Cash on Delivery (COD)"
+:"Card Payment"}
+
+━━━━━━━━━━━━━━━━━━━━━━
+
+🙏 *धन्यवाद!*
+
+💚 *MAA TARA DAIRY MILK FARM* पर विश्वास करने के लिए आपका हार्दिक आभार।
+
+🐄 *शुद्धता और गुणवत्ता हमारी पहचान है।*
+`
+
+window.open(
+"https://wa.me/919470484916?text="+encodeURIComponent(msg),
+"_blank"
+)
+
+billPreview.style.display="block"
+
+billCard.innerHTML=`
+
+<div style="text-align:center;">
+
+<h1 style="
+font-family:Cinzel;
+font-size:30px;
+font-weight:900;
+background:var(--gold);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+">
+
+माँ तारा डेयरी मिल्क फार्म
+
+</h1>
+
+<div style="
+font-size:14px;
+letter-spacing:3px;
+color:#f7d98d;
+margin-top:8px;
+">
+
+Fresh • Pure • Healthy
+
+</div>
+
+<p style="
+margin-top:12px;
+font-size:13px;
+color:#fff3b0;
+line-height:1.8;
+">
+
+🐄 शुद्धता और गुणवत्ता हमारी पहचान है।
+
+</p>
+
+</div>
+
+<div class="div"></div>
+
+<div style="
+line-height:2.2;
+font-size:15px;
+">
+
+<div>🧾 <b>ऑर्डर आईडी:</b> ${orderId}</div>
+
+<div>📅 <b>दिनांक:</b> ${date}</div>
+
+<div>⏰ <b>समय:</b> ${time}</div>
+
+<div>👤 <b>ग्राहक:</b> ${name}</div>
+
+<div>🛒 <b>ऑर्डर प्रकार:</b> ${type.value}</div>
+
+<div>📍 <b>पता:</b> ${address}</div>
+
+<div>💳 <b>पेमेंट:</b> ${pay=="Cash"
+?"Cash on Delivery (COD)"
+:"Card Payment"}</div>
+
+</div>
+
+<div class="div"></div>
+
+<h3 style="
+margin-bottom:15px;
+color:#fcf6ba;
+font-size:20px;
+">
+
+🛒 ऑर्डर विवरण
+
+</h3>
+
+${html}
+
+<div class="div"></div>
+
+<div class="total">
+
+<span>कुल राशि</span>
+
+<span>₹${total}</span>
+
+</div>
+
+<div style="
+text-align:center;
+margin-top:25px;
+font-size:13px;
+line-height:2;
+color:#ddd;
+">
+
+🙏 धन्यवाद!<br>
+
+💚 MAA TARA DAIRY MILK FARM पर विश्वास करने के लिए धन्यवाद।<br>
+
+🐄 शुद्धता और गुणवत्ता हमारी पहचान है।
+
+</div>
+
+`
+
+modal.style.display="none"
+
+}
+
+/* FULL PDF FIX */
+
+async function downloadPDF(){
+
+const bill = document.getElementById("billCard");
+
+const canvas = await html2canvas(bill,{
+scale:3,
+useCORS:true,
+backgroundColor:"#111111",
+scrollY:0
+});
+
+const imgData = canvas.toDataURL("image/png");
+
+const { jsPDF } = window.jspdf;
+
+const pdfWidth = 210;
+
+const pdfHeight =
+(canvas.height * pdfWidth) / canvas.width;
+
+const pdf = new jsPDF({
+orientation:'p',
+unit:'mm',
+format:[pdfHeight,pdfWidth]
+});
+
+pdf.addImage(
+imgData,
+'PNG',
+0,
+0,
+pdfWidth,
+pdfHeight
+);
+
+pdf.save("MaaTaraDairyBill.pdf");
+
+}
+
+function closeBill(){
+
+billPreview.style.display="none"
+
+}
+
 </script>
 
 </body>
